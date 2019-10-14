@@ -11,7 +11,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 trigger:
-- master
+- azure-pipelines
 
 pool:
   vmImage: 'ubuntu-latest'
