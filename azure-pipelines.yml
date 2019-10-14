@@ -1,4 +1,11 @@
 # Maven
+- task: synopsys-coverity@1
+  inputs:
+    coverityBuildDirectory: '$(Build.Repository.LocalPath)'
+    coverityRunType: 'custom'
+    customCoverityCommands: |
+      $(COV_TOOL_HOME)/bin/cov-configure --config config.xml--java
+      $(COV_TOOL_HOME)/bin/cov-build --config config.xml --dir $(Build.Repository.LocalPath)/dir make clean install
 # Build your Java project and run tests with Apache Maven.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
